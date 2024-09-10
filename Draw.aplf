@@ -1,0 +1,4 @@
+r←Draw n
+⍝ n = Number of cards to draw
+r←deck[n?≢deck]
+deck←deck~r
