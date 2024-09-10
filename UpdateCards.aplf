@@ -1,0 +1,13 @@
+UpdateCards;groups;group;g;card;t
+groups←'U1' 'U2' 'F1' 'F2' 'F3' 'T1' 'T2'
+excludeCards←0⍴0
+:For group :In groups
+      g←⍎'pokerForm.',group
+      :If ' '∊g.suit g.rank
+         :Continue
+      :EndIf
+      excludeCards,←Uglify g.rank,g.suit
+:EndFor
+:If 0<≢excludeCards
+     'Cards in play:',PrettyCard¨¨excludeCards
+:EndIf

@@ -1,0 +1,10 @@
+a Update b;c;d
+b←⊃b
+c←⍎⊃{⍺,'.',⍵}/¯1↓b⊆⍨~'.'=b
+:If (⊂a)∊suits
+    c.suit←a
+:ElseIf (⊂a)∊ranks
+    c.rank←a
+:EndIf
+((d←⍕c),'.label') ⎕WS 'Caption' (c.rank,c.suit)
+UpdateCards

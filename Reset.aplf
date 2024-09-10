@@ -1,0 +1,7 @@
+ Reset b
+ b←⊃b
+ c←⍎⊃{⍺,'.',⍵}/¯1↓b⊆⍨~'.'=b
+ c.suit←' '
+ c.rank←' '
+ ((⍕c),'.label')⎕WS'Caption' '  '
+ UpdateCards
