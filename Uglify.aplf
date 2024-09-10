@@ -1,0 +1,2 @@
+val←Uglify card
+ val←+/1 13×0 ¯1+ranks suits⍳¨card
