@@ -1,0 +1,19 @@
+ pos CardSelector name;t;suit;rank;b;i;id
+
+ ('pokerForm.',name) ⎕WC'Group'('Size' (20 0+buttonSize×⍴buttonPos))('Posn' pos)
+ t←0
+ rank←'pokerForm.',name,'.rank'
+ suit←'pokerForm.',name,'.suit'
+ ⍎rank,'←'' '''
+ ⍎suit,'←'' '''
+ :For i :In ⍳⍴buttons
+     b←i⊃↓buttons
+     id←'pokerForm.',name,'.a',⍕t←t+1
+     :If t∊14 15 16
+         :Continue
+     :EndIf
+     id ⎕WC'Button'b('Style' 'Push')('Posn'(i⊃↓buttonPos))('Size'buttonSize)
+     id ⎕WS 'Event' 'Select' 'Update' b
+ :EndFor
+ ('pokerForm.',name,'.reset') ⎕WC 'Button' 'Reset' ('Size' 15 60)('Posn' 45 20)('Event' 'Select' 'Reset')
+ ('pokerForm.',name,'.label') ⎕WC 'Label' ('Caption' '  ')('Size' 15 60) ('Posn' (75 30))

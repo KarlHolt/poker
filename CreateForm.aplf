@@ -1,0 +1,18 @@
+CreateForm;buttonPos;buttons;b;p;buttonSize
+'pokerForm' ⎕WC 'Form' ('Coord' 'ScaledPixel')('Size' 400 320)
+
+ buttonSize←15 20
+ buttonPos←{buttonSize×⍵}¨¯1+⍳5 4
+ buttons←suits⍪⍨4 4⍴ranks,20⍴' '
+ 10 65 CardSelector 'U1'
+ 10 175 CardSelector 'U2'
+
+ 120 10 CardSelector 'F1'
+ 120 120 CardSelector 'F2'
+ 120 230 CardSelector 'F3'
+
+ 230 65 CardSelector 'T1'
+ 230 175 CardSelector 'T2'
+
+
+ 'pokerForm.calc' ⎕WC 'Button' 'Calculate' ('Size' 20 80)('PosN' 350 120)('Event' 'Select' 'Calc')
